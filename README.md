@@ -1,7 +1,7 @@
 # top.gg-stats-count
 This is Sending all data of your bot to top.gg web 
 
-#### Paste your token and client id and enjoy 
+#### Paste your Bot token and Top.gg token and enjoy 
 
 # Invite Link: https://top.gg/bot/802812378558889994
            
