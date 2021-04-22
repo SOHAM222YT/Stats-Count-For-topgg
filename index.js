@@ -1,15 +1,23 @@
 const Discord = require("discord.js");
-const client = "YOUR CLIENT ID"; // Your discord.js client
-const Topgg = require('@top-gg/sdk')
-const { keep_alive } = require("./keep_alive");
+const client = new Discord.Client();
+const AutoPoster = require('topgg-autoposter');
+
+const ap = AutoPoster('TOP.GG_TOKEN', client);
+
+ap.on('posted', () => {
+  console.log('> Statistics are updated with success.')
+});
+//keep alive
+const express = require('express');
+const app = express();
+const port = 3000;
+app.listen(port, () => console.log(`BOT LISTENING  http://localhost:${port}`));
 
 
-const api = new Topgg.Api('YOUR TOP.GG TOKEN')
+client.on('ready', () => {
+    console.log('ALL DATA NOW SENDING TO TOP.GG CHECK OUT YOUR BOT PAGE');
+});
 
-setInterval(() => {
-  api.postStats({
-    serverCount: client.guilds.cache.size,
-    shardId: client.shard.ids[0], // if you're sharding
-    shardCount: client.options.shardCount
-  })
-}, 1800000) // post every 30 minutes
+client.login('BOT_TOKEN');
+
+
