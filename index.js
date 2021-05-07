@@ -7,13 +7,6 @@ const ap = AutoPoster('TOP.GG_TOKEN', client);
 ap.on('posted', () => {
   console.log('> Statistics are updated with success.')
 });
-//keep alive
-const express = require('express');
-const app = express();
-const port = 3000;
-app.listen(port, () => console.log(`BOT LISTENING  http://localhost:${port}`));
-
-
 client.on('ready', () => {
     console.log('ALL DATA NOW SENDING TO TOP.GG CHECK OUT YOUR BOT PAGE');
 });
