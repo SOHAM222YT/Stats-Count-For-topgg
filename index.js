@@ -8,7 +8,7 @@ ap.on('posted', () => {
   console.log('> Statistics are updated with success.')
 });
 client.on('ready', () => {
-    console.log('ALL DATA NOW SENDING TO TOP.GG CHECK OUT YOUR BOT PAGE');
+    console.log('ALL DATA NOW SENDING TO TOP.GG CHECK OUT YOUR BOT QUICKLY');
 });
 
 client.login('BOT_TOKEN');
