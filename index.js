@@ -1,16 +1,21 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const AutoPoster = require('topgg-autoposter');
 
-const ap = AutoPoster('TOP.GG_TOKEN', client);
+const { AutoPoster } = require('topgg-autoposter')
 
-ap.on('posted', () => {
-  console.log('> Statistics are updated with success.')
-});
-client.on('ready', () => {
-    console.log('ALL DATA NOW SENDING TO TOP.GG CHECK OUT YOUR BOT QUICKLY');
-});
+const poster = AutoPoster('Topgg Token', client) // your discord.js or eris client
 
-client.login('BOT_TOKEN');
+// optional
+poster.on('posted', (stats) => { // ran when succesfully posted
+  console.log(`Posted stats to Top.gg | ${stats.serverCount} servers`)
+})
+
+//keep alive
+const express = require('express');
+const app = express();
+const port = 3000;
+app.listen(port, () => console.log(`REAL LISTENING  http://localhost:${port}`));
+
+client.login('DISCORD_BOT_TOKEN');
 
 
